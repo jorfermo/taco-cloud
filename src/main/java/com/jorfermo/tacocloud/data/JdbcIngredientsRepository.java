@@ -16,10 +16,6 @@ public class JdbcIngredientsRepository implements IngredientsRepository {
    @Autowired
    private JdbcTemplate jdbcTemplate;
 
-   // public JdbcIngredientsRepository(JdbcTemplate jdbcTemplate) {
-   // this.jdbcTemplate = jdbcTemplate;
-   // }
-
    public Iterable<Ingredient> findAll() {
       return jdbcTemplate.query("select id, name, type from ingredient", this::mapRowToIngredient);
    }
