@@ -1,13 +1,9 @@
 package com.jorfermo.tacocloud.data;
 
-import java.util.Optional;
-
 import com.jorfermo.tacocloud.tacos.Ingredient;
 
-public interface IngredientsRepository {
-   Iterable<Ingredient> findAll();
+import org.springframework.data.repository.CrudRepository;
 
-   Optional<Ingredient> findOne(String id);
+public interface IngredientsRepository extends CrudRepository<Ingredient, String> {
 
-   Ingredient save(Ingredient ingredient);
 }
